@@ -39,7 +39,7 @@ gulp.task('compile', () => {
         SRC.SOUND,
         SRC.TWEEN
     ])
-        .pipe(concat('index.js'))
+        .pipe(concat('createjs.js'))
         .pipe(insert.prepend('var createjs = (this.createjs = (this.createjs || {}));\n'))
         .pipe(insert.append('\nif(typeof module !== "undefined" && typeof module.exports !== "undefined") module.exports = this.createjs;'))
         .pipe(gulp.dest(DEST.CREATE));
