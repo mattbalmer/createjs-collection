@@ -41,7 +41,7 @@ gulp.task('compile', () => {
     ])
         .pipe(concat('index.js'))
         .pipe(insert.prepend('var createjs = (this.createjs = (this.createjs || {}));\n'))
-        .pipe(insert.append('\nmodule.export = this.createjs;'))
+        .pipe(insert.append('\nif(typeof module !== "undefined" && typeof module.exports !== "undefined") module.exports = this.createjs;'))
         .pipe(gulp.dest(DEST.CREATE));
 });
 

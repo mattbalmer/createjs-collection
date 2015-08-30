@@ -23218,4 +23218,4 @@ this.createjs = this.createjs || {};
 	s.buildDate = /*=date*/"Thu, 21 May 2015 16:17:37 GMT"; // injected by build process
 
 })();
-module.export = this.createjs;
+if(typeof module !== "undefined" && typeof module.exports !== "undefined") module.exports = this.createjs;
